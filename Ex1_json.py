@@ -95,6 +95,16 @@ with open('books.json', 'r') as file:
 # NOTE: This loop will become the "home" for all your future code!
 
 
+choise = "0":
+while choice != "3":
+    print("--- BOOK INVENTORY ---")
+    print("1. View All Books", "2. Search for Book", "3. Exi")
+    user_choice = input(f"Enter a Number: ") 
+    choice = user_choice
+     if choice == "3":
+        print("Goodbye!")
+        else:
+            print("Invalid choice.")
 
 
 # -------------------------------------------
