@@ -50,8 +50,13 @@ import json  # We need this tool to read the external file
 #     variable_name = json.load(file)
 #
 # Write your code below:
+with open('books.json', 'r') as file:
+    library = json.load(file)
+    print(library)
 
-
+with open('books.json', 'r') as file:
+    library = json.load(file)
+    print(library)
 
 
 # -------------------------------------------
@@ -89,6 +94,35 @@ import json  # We need this tool to read the external file
 # Write your code below:
 # NOTE: This loop will become the "home" for all your future code!
 
+
+choice = "0"
+while choice != "3":
+    print("--- BOOK INVENTORY ---")
+    print("1. View All Books", "2. Search for Book", "3. Exi")
+    choice = input(f"Enter a Number: ")
+
+    if choice == "1":
+        for book in library:
+            print(f"Title:{book['title']} | Author:{book['author']} | Stock:{book['stock']}")
+
+    if choice == "2":
+        search =input("Enter book title to find: ")
+        found = False
+        for book in library:
+            if search in book["title"].lower():
+                print(f"Title:{book['title']} | Author:{book['author']} | Stock:{book['stock']}")
+                found = True
+        if not found:
+            print("book not found")
+            
+            
+    
+    if choice == "3":
+        print("Goodbye!")
+
+
+    else:
+         print("Invalid choice.")
 
 
 
@@ -173,6 +207,7 @@ import json  # We need this tool to read the external file
 #
 # (Modify the code in Task 2 - Do not write new code here)
 # -------------------------------------------
+
 
 
 # Extension 2: Inventory Value Calculation
