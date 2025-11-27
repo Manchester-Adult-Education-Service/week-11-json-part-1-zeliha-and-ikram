@@ -104,6 +104,18 @@ while choice != "3":
     if choice == "1":
         for book in library:
             print(f"Title:{book['title']} | Author:{book['author']} | Stock:{book['stock']}")
+
+    if choice == "2":
+        search =input("Enter book title to find: ")
+        found = False
+        for book in library:
+            if search in book["title"].lower():
+                print(f"Title:{book['title']} | Author:{book['author']} | Stock:{book['stock']}")
+                found = True
+        if not found:
+            print("book not found")
+            
+            
     
     if choice == "3":
         print("Goodbye!")
@@ -195,6 +207,7 @@ while choice != "3":
 #
 # (Modify the code in Task 2 - Do not write new code here)
 # -------------------------------------------
+
 
 
 # Extension 2: Inventory Value Calculation
